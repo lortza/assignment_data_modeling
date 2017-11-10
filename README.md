@@ -23,7 +23,7 @@ Courses
 
 Lessons
 - id: integer
-- course_id: integer
+- course_id: references (foreign_key)
 - title: string
 - body: text
 
@@ -33,8 +33,47 @@ Tags
 
 Tags_Lessons
 - id: integer
-- lesson_id: integer
-- tag_id: integer
+- lesson_id: references (foreign_key)
+- tag_id: references (foreign_key)
+
+### 2) User Profile Page
+
+#### Goals
+
+- collect repeatable demographic information in supporting tables
+- be flexible in the names of available genders
+- display a user's state and country via joins to city
+- display a fixed list of cities (though this is not accurate enough for mailings, it will suffice for a "choose the city nearest to you" situation)
+
+#### Tables
+
+Users
+- id: integer
+- username: string
+- email: string
+- age: integer
+- gender_id: references (foreign_key)
+- city_id: references (foreign_key)
+
+Cities
+- id: integer
+- state_id: references (foreign_key)
+
+States
+- id: integer
+- name: string
+- abbreviation: string
+- country_id: foreign_key
+
+Countries
+- id: integer
+- name: string
+- abbreviation: string
+
+Genders
+- id: integer
+- name: string
+
 
 ## Intermediate
 
