@@ -112,13 +112,20 @@ Comment_Hierarchies
 - ancestor_id: references (foreign_key)
 - descendant_id: references (foreign_key)
 
-
-
-
-
-Users_
-
-
 ## Advanced
 
+### E-commerce
+
+#### Goals
+- TBD
+
+#### Tables
+- TBD
+
+### Analytics
+
+#### Goals
+- TBD
+
+#### Tables
 - TBD
