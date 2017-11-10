@@ -63,7 +63,7 @@ States
 - id: integer
 - name: string
 - abbreviation: string
-- country_id: foreign_key
+- country_id: references (foreign_key)
 
 Countries
 - id: integer
@@ -77,7 +77,46 @@ Genders
 
 ## Intermediate
 
-- TBD
+### Hacker News-like Site
+
+#### Goals
+
+- users must sign in
+- users can post submissions
+- users can comment on submissions
+
+#### Tables
+
+Users
+- id: integer
+- username: string
+- email: string
+
+ContentTypes (ex: post, comment)
+- id: integer
+- name: string ?
+
+Posts
+- id: integer
+- user_id: references (foreign_key)
+- content_type_id: references (foreign_key)
+
+Comments
+- id: integer
+- user_id: references (foreign_key)
+- parent_id: references (foreign_key)
+- content_type_id: references (foreign_key)
+
+Comment_Hierarchies
+- id: integer
+- ancestor_id: references (foreign_key)
+- descendant_id: references (foreign_key)
+
+
+
+
+
+Users_
 
 
 ## Advanced
